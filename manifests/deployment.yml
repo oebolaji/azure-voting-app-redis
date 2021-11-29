@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: oebolajiazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oebolajiazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: oebolajiazurevotingappredis 
+    spec:
+      containers:
+        - name: oebolajiazurevotingappredis 
+          image: obafreg.azurecr.io/oebolajiazurevotingappredis
+          ports:
+          - containerPort: 80
